@@ -2,12 +2,29 @@
 draft = false
 path = "about"
 template = "pages.html"
-title = "About"
+title = "About Me"
 +++
-This site provides a demo for the [abridge theme](https://github.com/Jieiku/abridge) for [Zola](https://www.getzola.org/) the static site generator.
 
-Abridge was created by [Jake G (jieiku)](https://github.com/Jieiku) to be fast and lightweight, using semantic html, a class-light [abridge.css](https://github.com/Jieiku/abridge.css), and No Mandatory JS.
+## Hello, I'm Duan Ge (段舸)
 
-Nearly half of the existing Zola MIT themes were inspiration for features and design of this theme.
+Welcome to my personal blog! I'm passionate about artificial intelligence, programming, and sharing knowledge that can help others navigate the rapidly evolving tech landscape.
 
-Abridge is licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### What I Share
+
+#### AI Tools & Technology
+I explore and review the latest AI tools and technologies, providing practical insights on how to leverage them effectively. From large language models to productivity tools powered by AI, I aim to demystify these technologies and show their practical applications.
+
+#### Programming Knowledge
+As a programmer, I share tutorials, tips, and best practices across various programming languages and frameworks. Whether you're a beginner or an experienced developer, you'll find content that helps you enhance your coding skills.
+
+#### Life Experiences
+Beyond technology, I share personal experiences and lessons learned throughout my journey. I believe that personal growth goes hand-in-hand with professional development.
+
+### Connect With Me
+
+Feel free to reach out through:
+- Email: [admin@z23.cc](mailto:admin@z23.cc)
+- GitHub: [z23cc/z23cc.github.io](https://github.com/z23cc/z23cc.github.io)
+- RSS: Subscribe to stay updated with my latest posts
+
+Thank you for visiting, and I hope you find value in the content I share!

@@ -44,7 +44,6 @@ external_links_no_follow = false   # rel="nofollow"
 external_links_no_referrer = false # rel="noreferrer"
 smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` etc
 
-# 已移除多语言配置，只保留英语
 
 [extra]
 ###############################################################################
@@ -70,7 +69,7 @@ menu_footer = [
 
 toc = true
 recent = true # TOC / index
-recent_items = 15
+recent_items = 20
 series = true
 series_items = 9 # Max number of items to display in series list, use 0 to disable
 #Series_parts = "$NUMBER_OF_PARTS part Series"
