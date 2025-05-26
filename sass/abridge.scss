@@ -26,9 +26,9 @@ $enable-maxwidth: true !default;
 $mw: 70% !default;// max-width
 $mb: 1200px !default;// value at which to switch from fluid layout to max-width
 
-$abridgeMode: "switcher" !default;//valid values: switcher, auto, dark, light
-$syntax-mode: "auto" !default;// Force syntax mode: auto, dark, light
-$switcherDefault: "dark" !default;// default for nojs switcher: dark, light
+$abridgeMode: "dark" !default;//已设置为只使用黑色主题
+$syntax-mode: "dark" !default;// 强制使用黑色代码高亮
+$switcherDefault: "dark" !default;// 默认为黑色主题
 
 $color: "orange" !default;// color template to use/override: orange, blue, blueshade
 

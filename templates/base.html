@@ -61,33 +61,9 @@
               {%- endfor -%}
             {%- endif -%}
 
-            {%- if config.languages | length > 0 %}
-            <li><div class="dropdown"><i class="svgs world" type="reset"></i>
-              {%- if current_url %}
-                <div class="dropdown-content">
-                <span>{{ macros::translate(key="language_name", default="lang_name", i18n=i18n) }}</span>
-                {%- for lcode,language in config.languages -%}
-                  {%- set i18n_menu = load_data(path="i18n/" ~ lcode ~ '.toml', required=false) -%}
-                  {%- if not i18n_menu -%}{%- set i18n_menu = load_data(path="themes/abridge/i18n/" ~ lcode ~ ".toml", required=false) -%}{%- endif %}
-                  {%- if lang != lcode -%}
-                    {%- if lcode == config.default_language -%}
-                    <a href="{{ current_url | replace(from='/' ~ lang ~ '/', to = '/') | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ macros::translate(key="language_name", default="language_name", i18n=i18n_menu) }}</a>
-                    {%- elif lang == config.default_language -%}
-                    <a href="{{ current_url | replace(from=config.base_url, to=config.base_url ~ "/" ~ lcode) | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ macros::translate(key="language_name", default="language_name", i18n=i18n_menu) }}</a>
-                    {%- else -%}
-                    <a href="{{ current_url | replace(from='/' ~ lang ~ '/', to = '/' ~ lcode ~ '/') | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ macros::translate(key="language_name", default="language_name", i18n=i18n_menu) }}</a>
-                    {%- endif -%}
-                  {%- endif -%}
-                {%- endfor -%}
-                </div>
-              {%- endif %}
-            </div></li>
-            {%- endif %}
+            {# 已移除多语言切换菜单 #}
 
-            {%- if js_switcher -%}
-              {%- set icon_adjust=config.extra.icon_adjust | default(value="svgs adjust") -%}
-              {%- if icon_adjust -%}<li><i type="reset" id="mode" class="js {{ icon_adjust }}"></i>{%- else -%}<i type="reset" id="mode" class="js mode">&#9728;</i></li>{%- endif -%}
-            {%- endif -%}
+            {# 已移除主题切换按钮 #}
 
           </ul>
         </div>
