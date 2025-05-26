@@ -1,27 +1,46 @@
-name: publish-sponsors
+name: build-and-deploy
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
+  workflow_dispatch:
+
 jobs:
-  generate-sponsors:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
-
-      - name: Generate Sponsors 💖
-        uses: JamesIves/github-sponsors-readme-action@v1
         with:
-          token: ${{ secrets.PAT }}
-          file: 'README.md'
-          active-only: false
+          submodules: true
+          fetch-depth: 0
+
+
+      - name: Setup Zola ⚙️
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.20.0
+
+      - name: Setup Node.js 🔧
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.14.0'
+
+      - name: Install Dependencies 📦
+        run: npm install
+
+      - name: Build Site 🏗️
+        run: |
+          zola build
+          touch public/.nojekyll
 
       - name: Deploy to GitHub Pages 🚀
+        if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: master
-          folder: '.'
+          branch: gh-pages
+          folder: public
+          clean: true
