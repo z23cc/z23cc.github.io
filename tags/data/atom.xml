@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Abridge - Data</title>
     <subtitle>Abridge is a fast, lightweight, and modern Zola theme (class-light, semantic HTML). Perfect Lighthouse, YellowLabTools, and Observatory scores.</subtitle>
-    <link rel="self" type="application/atom+xml" href="https://abridge.netlify.app/tags/data/atom.xml"/>
-    <link rel="alternate" type="text/html" href="https://abridge.netlify.app"/>
+    <link rel="self" type="application/atom+xml" href="https://z23cc.github.io/tags/data/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://z23cc.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2021-05-09T15:00:00+00:00</updated>
-    <id>https://abridge.netlify.app/tags/data/atom.xml</id>
+    <id>https://z23cc.github.io/tags/data/atom.xml</id>
     <entry xml:lang="en">
         <title>Showdata Shortcode</title>
         <published>2021-05-09T15:00:00+00:00</published>
@@ -20,8 +20,8 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://abridge.netlify.app/overview-showdata/"/>
-        <id>https://abridge.netlify.app/overview-showdata/</id>
+        <link rel="alternate" type="text/html" href="https://z23cc.github.io/overview-showdata/"/>
+        <id>https://z23cc.github.io/overview-showdata/</id>
         
         <summary type="html">&lt;p&gt;The &lt;code&gt;showdata&lt;&#x2F;code&gt; shortcode can load and display data from an external source via Zola&#x27;s &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;#load-data&quot;&gt;load_data()&lt;&#x2F;a&gt; function.&lt;&#x2F;p&gt;</summary>
         

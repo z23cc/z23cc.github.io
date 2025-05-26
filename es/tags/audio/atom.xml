@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
     <title>Abridge - Audio</title>
     <subtitle>Abridge es un tema de Zola rápido y liviano que utiliza HTML semántico, CSS ligero de clase abridge.css y JS no obligatorio.</subtitle>
-    <link rel="self" type="application/atom+xml" href="https://abridge.netlify.app/es/tags/audio/atom.xml"/>
-    <link rel="alternate" type="text/html" href="https://abridge.netlify.app"/>
+    <link rel="self" type="application/atom+xml" href="https://z23cc.github.io/es/tags/audio/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://z23cc.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2021-05-15T15:00:00+00:00</updated>
-    <id>https://abridge.netlify.app/es/tags/audio/atom.xml</id>
+    <id>https://z23cc.github.io/es/tags/audio/atom.xml</id>
     <entry xml:lang="es">
         <title>Contenido enriquecido</title>
         <published>2021-05-15T15:00:00+00:00</published>
@@ -20,8 +20,8 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://abridge.netlify.app/es/overview-rich-content/"/>
-        <id>https://abridge.netlify.app/es/overview-rich-content/</id>
+        <link rel="alternate" type="text/html" href="https://z23cc.github.io/es/overview-rich-content/"/>
+        <id>https://z23cc.github.io/es/overview-rich-content/</id>
         
         <summary type="html">&lt;p&gt;Se incluyen varios shortcodes personalizados para aumentar CommonMark. &lt;code&gt;video&lt;&#x2F;code&gt; los shortcodes &lt;code&gt;image&lt;&#x2F;code&gt;, &lt;code&gt;gif&lt;&#x2F;code&gt; y &lt;code&gt;audio&lt;&#x2F;code&gt; se crearon para ayudarle a aprovechar los elementos HTML modernos en sus escritos.&lt;&#x2F;p&gt;</summary>
         
