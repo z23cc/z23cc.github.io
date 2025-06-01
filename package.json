@@ -1,0 +1,38 @@
+{
+  "name": "notion-hexo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo clean && hexo server",
+    "sync:local": "elog sync -e .elog.env",
+    "elog:init": "elog init",
+    "sync": "elog sync",
+    "elog:clean": "elog clean"
+  },
+  "engines": {
+    "node": ">=22.14.0",
+    "npm": ">=11.0.0"
+  },
+  "hexo": {
+    "version": "7.3.0"
+  },
+  "dependencies": {
+    "@elog/cli": "^0.14.7",
+    "hexo": "^7.0.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-searchdb": "^1.5.0",
+    "hexo-generator-sitemap": "^3.0.1",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.1",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.0",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-butterfly": "^5.3.5"
+  }
+}
