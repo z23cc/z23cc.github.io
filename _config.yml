@@ -12,8 +12,8 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://notion-hexo.vercel.app
+## GitHub Pages URL - configured for z23cc.github.io (main site)
+url: https://z23cc.github.io
 permalink: :title/
 permalink_defaults:
 pretty_urls:
@@ -98,6 +98,14 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: butterfly
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+  rel: false
+  tags: true
+  categories: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

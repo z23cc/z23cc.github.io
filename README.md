@@ -1,4 +1,4 @@
-# Notion + Hexo + GitHub Actions + Vercel 博客解决方案
+# Notion + Hexo + GitHub Actions + GitHub Pages 博客解决方案
 
 # 博客工具
 
@@ -6,7 +6,8 @@
 - 博客平台：[Hexo](https://hexo.io/)
 - 博客主题：[Butterfly@4.10.0](https://github.com/jerryc127/hexo-theme-butterfly)
 - 博客文档同步：[Elog](https://github.com/LetTTGACO/elog)
-- 部署平台：Vercel
+- 部署平台：GitHub Pages
+- CI/CD：GitHub Actions
 
 # 博客搭建指南
 
@@ -80,69 +81,52 @@ npm run server
 本地访问没问题直接提交所有文件到 Github 仓库即可
 
 
-## 9. 部署到 Vercel
+## 9. 配置 GitHub Pages
+
+本项目已配置为使用 GitHub Pages 进行部署，无需 Vercel。
+
+### 9.1 启用 GitHub Pages
+1. 进入 GitHub 仓库的 **Settings** → **Pages**
+2. 在 **Source** 中选择 **GitHub Actions**
+3. 详细设置请参考：[GitHub Pages 设置指南](./GITHUB_PAGES_SETUP.md)
+
+### 9.2 访问地址
+部署成功后，博客地址为：https://z23cc.github.io
 
 
-注册 Vercel 账号并绑定 Github，在 Vercel 导入 该项目，Vercel 会自动识别出该 Hexo 项目，不需要改动，直接选择 Deploy 部署。部署完成会有一个 Vercel 临时域名，你也可以绑定自己的域名。
+## 10. 自动化部署
 
+本项目使用 GitHub Actions 实现完全自动化的部署流程：
 
-![Untitled.png](https://image.1874.cool/1874/202311082348509.png)
-
-
-![Untitled.png](https://image.1874.cool/1874/202311082348344.png)
-
-
-## 10. 配置 Github Actions 权限
-
-
-在 Github 仓库的设置中找到 `Actions-General`，打开流水线写入权限`Workflow permissions`
-
-
-![Untitled.png](https://image.1874.cool/1874/202311082349660.png)
-
-
-## 11. 配置环境变量
-
-
-在本地运行时，用的是`.elog.env`文件中定义的 Notion 账号信息，而在 Github Actions 时，需要提前配置环境变量。
-
-
-在 Github 仓库的设置中找到 `Secrets  and variables`，新增仓库的环境变量`NOTION_DATABASE_ID`和`NOTION_TOKEN`和`.elog.env`保持一致即可
-
-
-![Untitled.png](https://image.1874.cool/1874/202311082348909.png)
-
-
-## 12. 自动化部署
-
-
-当在 Notion 中改动文档后，手动/自动触发 Github Actions流水线，会重新从 Notion 增量拉取文档，自动提交代码到 Github 仓库。
-
-
-Vercel 会实时监测仓库代码，当有新的提交时都会重新部署博客。如此就实现了自动化部署博客。
-
-
-整个流程的关键点就在于：如何手动/自动触发 Github Actions
-
-
-在项目.`github/workflows/sync.yaml`中已经配置了外部 API 触发 Github Actions 事件，所以只需要调用 API 触发流水线即可。
-
-
-### 手动触发
-
-
-为了方便，这里提供一个部署在 Vercel 的免费公用的[**ServerlessAPI**](https://github.com/elog-x/serverless-api)，只需要配置好 URL 参数并浏览器访问即可触发流水线
-
-
-```shell
-https://serverless-api-elog.vercel.app/api/github?user=xxx&repo=xxx&event_type=deploy&token=xxx
+### 10.1 部署流程
+```
+Notion 更新 → GitHub Actions → 同步内容 → 构建 Hexo → 部署到 GitHub Pages
 ```
 
+### 10.2 触发方式
 
-### 自动触发
+1. **代码推送触发**（推荐）：
+   ```bash
+   git push origin main
+   ```
 
+2. **手动触发**：
+   - GitHub 仓库 → Actions → "Sync and Deploy" → Run workflow
 
-可在 Notion 中结合 Slack 触发，[参考教程](https://elog.1874.cool/notion/vy55q9xwlqlsfrvk)，这里就不做进一步演示了
+3. **API 触发**（兼容原有方式）：
+   ```shell
+   https://serverless-api-elog.vercel.app/api/github?user=z23cc&repo=z23cc.github.io&event_type=deploy&token=YOUR_TOKEN
+   ```
+
+### 10.3 必要配置
+
+确保以下设置正确配置：
+
+1. **GitHub Pages**：Settings → Pages → Source: GitHub Actions
+2. **Actions 权限**：Settings → Actions → General → Read and write permissions
+3. **环境变量**：Settings → Secrets → NOTION_TOKEN 和 NOTION_DATABASE_ID
+
+详细设置步骤请参考：[GitHub Pages 设置指南](./GITHUB_PAGES_SETUP.md)
 
 
 # 自定义 Elog 配置
@@ -153,10 +137,22 @@ https://serverless-api-elog.vercel.app/api/github?user=xxx&repo=xxx&event_type=d
 
 # 示例
 
-
-示例仓库：[https://github.com/LetTTGACO/notion-hexo](https://github.com/LetTTGACO/notion-hexo)
+原始示例仓库：[https://github.com/LetTTGACO/notion-hexo](https://github.com/LetTTGACO/notion-hexo)
 
 Notion数据库模版：[elog-hexo-template](https://1874.notion.site/867486af567f4a8897427b15ffd10b3c?v=a25aec8e27d5415e8605e43034f822bd&pvs=4)
 
-博客示例地址：[https://notion-hexo.vercel.app](https://notion-hexo.vercel.app/)
+本项目博客地址：[https://z23cc.github.io](https://z23cc.github.io)
+
+## 🆚 Vercel vs GitHub Pages
+
+| 特性 | Vercel | GitHub Pages |
+|------|--------|--------------|
+| 成本 | 免费额度有限 | 完全免费 |
+| 配置复杂度 | 零配置 | 需要配置 Actions |
+| 构建速度 | 快 | 中等 |
+| CDN性能 | 优秀 | 良好 |
+| 依赖性 | 依赖第三方 | 只依赖 GitHub |
+| 自定义域名 | 支持 | 支持 |
+
+本项目已迁移至 GitHub Pages，享受完全免费的博客托管服务！
 
