@@ -26,8 +26,8 @@ module.exports = {
     enable: true,
     platform: 'local',
     local: {
-      outputDir: './source/_posts',
-      prefixKey: ''
+      outputDir: './source/images',
+      prefixKey: '/images'
     }
   },
 }
