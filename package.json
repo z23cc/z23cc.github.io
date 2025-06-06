@@ -22,6 +22,7 @@
   "dependencies": {
     "@elog/cli": "^0.14.7",
     "hexo": "^7.0.0",
+    "hexo-asset-image": "^1.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^4.0.0",
