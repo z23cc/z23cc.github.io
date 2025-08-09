@@ -14,10 +14,10 @@ on:
   workflow_dispatch:
   # 定时构建：每天4次（早上8点、中午12点、下午6点、晚上10点）
   schedule:
-    - cron: '0 1 * * *'   
-    - cron: '0 3 * * *'   
-    - cron: '0 9 * * *'  
-    - cron: '0 15 * * *' 
+    - cron: '0 0 * * *'
+    - cron: '0 4 * * *'
+    - cron: '0 10 * * *'
+    - cron: '0 14 * * *'
 
 # 设置GITHUB_TOKEN权限
 permissions:
@@ -48,7 +48,6 @@ jobs:
 
       - name: 安装依赖
         run: |
-          export TZ='Asia/Shanghai'
           npm ci
 
       - name: 拉取Notion文档
